@@ -61,7 +61,7 @@ def img_cropping(file_img):
         img_cropped_2 = file_img + "\\" + Name_2 + ".png"
         cv2.imwrite(img_cropped_2, cropImg_2)
 
-# 文字识别，并将所识别文字添加进DataFrame中
+# 文字识别，并创建Excel表格，将所识别文字添加进Excel中
 def ocr(file_img, dir_1, path_excel, excelName):
     print("正在进行文字识别......")
     ocr_1 = []
@@ -86,7 +86,7 @@ def ocr(file_img, dir_1, path_excel, excelName):
 if __name__ == '__main__':
     file_pdf = r"C:\Users\ASUS\Desktop\ocr\TEST\1_pdf" #存放PDF文件的文件夹
     file_img= r"C:\Users\ASUS\Desktop\ocr\TEST\2_img" #存放各种图片的文件夹
-    path_excel = r"C:\Users\ASUS\Desktop\ocr\TEST" #存放各种Excle的文件夹
+    path_excel = r"C:\Users\ASUS\Desktop\ocr\TEST" #存放Excel表的文件夹
     excelName = r"ocr_res.xlsx"
     dir_1 = pdf_to_img(file_pdf, file_img)
     print("文件格式已转换成功")
