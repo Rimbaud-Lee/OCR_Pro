@@ -9,6 +9,7 @@ import pytesseract
 import pandas as pd
 import re
 import time
+start = time.time()
 
 # PDF转图片
 def pdf_to_img(file_pdf, file_img):
@@ -89,19 +90,15 @@ if __name__ == '__main__':
     path_excel = r"C:\Users\ASUS\Desktop\ocr\TEST" #存放Excel表的文件夹
     excelName = r"ocr_res.xlsx"
     dir_1 = pdf_to_img(file_pdf, file_img)
-    print("文件格式已转换成功")
-    print("="*130)
+    print("文件格式已转换成功", "\n", "="*130)
     img_gary(file_img)
-    print("图片已灰度化成功")
-    print("="*130)
+    print("图片已灰度化成功", "\n", "="*130)
     img_cropping(file_img)
-    print("灰度图已裁剪成功")
-    print("="*130)
+    print("灰度图已裁剪成功", "\n", "="*130)
     ocr(file_img, dir_1, path_excel, excelName)
-    print("文字已成功识别，并已将内容填充进Excel表中")
-    print("=" * 130)
-    print("\n")
-    print("程序运行时间为：", time.process_time())
+    print("文字已成功识别，并已将内容填充进Excel表中", "\n", "="*130)
+    end = time.time()
+    print("程序运行时间为：", end-start, "秒")
 
 
 # 注：
