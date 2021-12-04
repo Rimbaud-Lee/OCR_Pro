@@ -9,6 +9,7 @@ import pytesseract
 import pandas as pd
 import re
 import time
+start = time.time()
 
 def ocr(file_pdf, file_img, path_excel, excelName):
     cons = []
@@ -77,4 +78,5 @@ if __name__ == '__main__':
     ocr(file_pdf, file_img, path_excel, excelName)
 
     print("\n")
-    print("程序结束！运行时间为：", time.process_time())
+    end = time.time()
+    print("程序结束！运行时间为：", end-start, "秒")
